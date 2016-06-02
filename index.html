@@ -7,11 +7,15 @@
   </head>
   <body>
   <h1>accurate coords</h1>
-  <p id="location"></p>
+  <p id="latitude"></p>
+  <p id="longitude"></p>
+  <p id="accuracy"></p>
   </body>
   <script type="text/javascript">
   	navigator.geolocation.getCurrentPosition(function(pos){
-  		document.getElementById("location").innerHTML = pos.coords
+  		document.getElementById("latitude").innerHTML = "Latitude: " + pos.coords.latitude
+  		document.getElementById("longitude").innerHTML = "Longitude: " + pos.coords.longitude
+  		document.getElementById("accuracy").innerHTML = "Accuracy: " + pos.coords.accuracy
   	},function(){
   		alert("error!")
   	},{enableHighAccuracy: true})
