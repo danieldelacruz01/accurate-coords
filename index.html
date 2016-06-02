@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>accurate coords</title>
+    <meta charset="UTF-8">  
+  </head>
+  <body>
+  <h1>accurate coords</h1>
+  <p id="location"></p>
+  </body>
+  <script type="text/javascript">
+  	navigator.geolocation.getCurrentPosition(function(pos){
+  		document.getElementById("location").innerHTML = pos.coords
+  	},function(){
+  		alert("error!")
+  	},{enableHighAccuracy: true})
+  </script>
+</html>
